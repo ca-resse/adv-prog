@@ -55,5 +55,16 @@ public class Survey {
         SurveyDetails = newDetails;
     }
 
+    public void addNewSurvey(){
+
+    }
+
+    public void viewSurvey(){
+
+    }
+
+    public void updateSurvey(){
+        
+    }
     
 }
