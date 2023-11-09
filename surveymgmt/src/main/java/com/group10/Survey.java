@@ -60,7 +60,7 @@ public class Survey {
     }
 
     public void viewSurvey(){
-
+        //might need to be implemented on the Survey Creator's screen
     }
 
     public void updateSurvey(){
