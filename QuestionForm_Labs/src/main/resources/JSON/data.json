@@ -1,0 +1,35 @@
+{
+    "title": "Cipher",
+    "description": "Reality is an illlusion",
+    "questionsList": [
+        {
+            "questionText": "Do you like me?",
+            "questionType": "multiple choice",
+            "isRequired": "required",
+            "answerOptions": [
+                "Yes",
+                "Definitely",
+                "Absolutely",
+                "Other"
+            ]
+        },
+        {
+            "questionText": "If you answered yes to the previous question, why?",
+            "questionType": "open ended",
+            "isRequired": "optional"
+        },
+        {
+            "questionText": "Buy gold?",
+            "questionType": "polar",
+            "isRequired": "required"
+        },
+        {
+            "questionText": "How free are you 2nite?",
+            "questionType": "scale",
+            "isRequired": "optional",
+            "scaleDivisions": "5",
+            "answerMin": "Germany, 1942",
+            "answerMax": "America"
+        }
+    ]
+}
