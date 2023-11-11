@@ -1,6 +1,5 @@
 package com.group10;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -50,16 +49,17 @@ public class SurveyFormController implements Initializable {
     @FXML
     public void onClick_create_btn (ActionEvent e) throws IOException{
         // To append new survey information to the list
-        StringBuilder sb = new StringBuilder();
-        sb.append(newSurveyTitle.getText().toString() + "\n");
-        sb.append(newSurveyDetails.getText().toString() + "\n");
 
-        File file = new File("surveylist.txt");
-        FileWriter fw = new FileWriter(file);
-        fw.write(sb.toString());
+        String filePath = "surveylist.txt";
+        Integer survey_id = 1;
+        String surveytitle = newSurveyTitle.getText().toString();
+        String surveydetails = newSurveyDetails.getText().toString();
+
+        FileWriter fw = new FileWriter(filePath, true);
+        fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\n");
         fw.close();
 
-        App.setRoot("secondary");
+        App.setRoot("surveylist");
     }
 
     @FXML
