@@ -5,6 +5,8 @@ public class Survey {
     String surveyTitle;
     String creatorName;
     String surveyDetails;
+    boolean isStarted;
+    boolean isBlocked;
     
     // constructor
     public Survey(int id, String title, String name, String details){
@@ -12,6 +14,8 @@ public class Survey {
         surveyTitle = title;
         creatorName = name;
         surveyDetails = details; //short description of survey
+        isStarted = true; //visibility is set to started by default
+        isBlocked = false; //surveys are not blocked by default
     }
 
     // constructor (survey details parameter is optional)
@@ -19,6 +23,8 @@ public class Survey {
         surveyID = id;
         surveyTitle = title;
         creatorName = name;
+        isStarted = true; //visibility is set to started by default
+        isBlocked = false; //surveys are not blocked by default
     }
 
 // Getter methods

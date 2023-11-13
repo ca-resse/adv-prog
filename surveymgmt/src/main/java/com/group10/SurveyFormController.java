@@ -62,7 +62,7 @@ public class SurveyFormController implements Initializable {
 
         FileWriter fw = new FileWriter(filePath, true);
         if (survey_id > 1){
-            fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name);
+            fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name + "\n");
         } else {
             System.out.println("Entry not added, error generating survey id.\n Check surveylist.txt");
         }
