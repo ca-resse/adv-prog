@@ -52,11 +52,12 @@ public class SurveyFormController implements Initializable {
 
         String filePath = "surveylist.txt";
         Integer survey_id = 1;
+        String creator_name = "placeholder";
         String surveytitle = newSurveyTitle.getText().toString();
         String surveydetails = newSurveyDetails.getText().toString();
 
         FileWriter fw = new FileWriter(filePath, true);
-        fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\n");
+        fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name);
         fw.close();
 
         App.setRoot("surveylist");

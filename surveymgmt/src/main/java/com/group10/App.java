@@ -1,12 +1,11 @@
 package com.group10;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  * JavaFX App
@@ -18,7 +17,21 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+
+        // Collection<SurveyData> list = Files.readAllLines(new File("surveylist.txt").toPath()).stream().map(line -> {
+        //     String[] details = line.split("\t");
+        //     SurveyData sd = new SurveyData();
+        //     sd.setSurveyID(details[0]);
+        //     sd.setSurveyTitle(details[1]);
+        //     sd.setSurveyDetails(details[2]);
+        //     sd.setCreatorName(details[3]);
+        //     return sd;
+        // })
+        // .collect(Collectors.toList());
+
+        // ObservableList<SurveyData> details =FXCollections.observableArrayList(list);
+
+        scene = new Scene(loadFXML("surveylist"), 640, 480);
         stage.setScene(scene);
         stage.setTitle("Taylor's Survey Management System");
         stage.show();

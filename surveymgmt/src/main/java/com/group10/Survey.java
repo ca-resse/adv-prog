@@ -1,58 +1,58 @@
 package com.group10;
 
 public class Survey {
-    int SurveyID;
-    String SurveyTitle;
-    String CreatorName;
-    String SurveyDetails;
+    int surveyID;
+    String surveyTitle;
+    String creatorName;
+    String surveyDetails;
     
     // constructor
     public Survey(int id, String title, String name, String details){
-        id = SurveyID;
-        title = SurveyTitle;
-        name = CreatorName;
-        details = SurveyDetails; //short description of survey
+        surveyID = id;
+        surveyTitle = title;
+        creatorName = name;
+        surveyDetails = details; //short description of survey
     }
 
     // constructor (survey details parameter is optional)
     public Survey(int id, String title, String name){
-        id = SurveyID;
-        title = SurveyTitle;
-        name = CreatorName;
+        surveyID = id;
+        surveyTitle = title;
+        creatorName = name;
     }
 
 // Getter methods
     public int getSurveyID(){
-        return SurveyID;
+        return surveyID;
     }
 
     public String getSurveyTitle(){
-        return SurveyTitle;
+        return surveyTitle;
     }
 
     public String getCreatorName(){
-        return CreatorName;
+        return creatorName;
     }
 
     public String getSurveyDetails(){
-        return SurveyDetails;
+        return surveyDetails;
     }
 
 // Setter methods
     public void setSurveyID(int newID){
-        SurveyID = newID;
+        surveyID = newID;
     }
 
     public void setSurveyTitle(String newTitle){
-        SurveyTitle = newTitle;
+        surveyTitle = newTitle;
     }
 
     public void setCreatorName(String newName){
-        CreatorName = newName;
+        creatorName = newName;
     }
 
     public void setSurveyDetails(String newDetails){
-        SurveyDetails = newDetails;
+        surveyDetails = newDetails;
     }
 
     public void addNewSurvey(){

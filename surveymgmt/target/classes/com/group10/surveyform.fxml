@@ -13,7 +13,7 @@
    <children>
       <Button fx:id="logout_btn" layoutX="544.0" layoutY="-2.0" mnemonicParsing="false" onAction="#onClick_logout_btn" text="Logout" AnchorPane.rightAnchor="0.0" />
       <Button fx:id="create_btn" layoutX="446.0" layoutY="47.0" mnemonicParsing="false" onAction="#onClick_create_btn" prefHeight="30.0" prefWidth="103.0" style="-fx-background-color: limegreen;" text="Create" AnchorPane.rightAnchor="50.799999999999955" />
-      <Label alignment="CENTER" layoutX="174.0" layoutY="47.0" prefHeight="30.0" prefWidth="252.0" text="Create New Survey">
+      <Label alignment="CENTER" layoutX="174.0" layoutY="47.0" prefHeight="30.0" prefWidth="252.0" text="Create New Survey" AnchorPane.topAnchor="50.0">
          <font>
             <Font name="Arial Bold" size="21.0" />
          </font>
