@@ -6,7 +6,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -30,11 +29,6 @@
             <TableColumn fx:id="creatorname_col" maxWidth="181.60003662109375" minWidth="63.20001220703125" prefWidth="92.79995727539062" text="Creator Name" />
         </columns>
       </TableView>
-      <ToggleButtonGroup layoutX="50.0" layoutY="82.0" selectionType="SINGLE">
-          <toggles>
-              <ToggleButton text="Start" />
-              <ToggleButton selected="true" text="Close" />
-          </toggles>
-      </ToggleButtonGroup>
+      <ToggleButtonGroup layoutX="50.0" layoutY="82.0" selectionType="SINGLE" />
    </children>
 </AnchorPane>
