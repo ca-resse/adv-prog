@@ -44,6 +44,14 @@ public class Survey {
         return surveyDetails;
     }
 
+    public boolean getIsStarted(){
+        return isStarted;
+    }
+
+    public boolean getIsBlocked(){
+        return isBlocked;
+    }
+
 // Setter methods
     public void setSurveyID(int newID){
         surveyID = newID;
@@ -61,6 +69,15 @@ public class Survey {
         surveyDetails = newDetails;
     }
 
+    public void setIsStarted(boolean status){
+        isStarted = status;
+    }
+
+    public void setIsBlocked(boolean status){
+        isBlocked = status;
+    }
+
+    //Class Methods (might be implemented from controller class)
     public void addNewSurvey(){
 
     }

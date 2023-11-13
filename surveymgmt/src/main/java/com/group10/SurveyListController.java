@@ -61,10 +61,11 @@ public class SurveyListController {
     }
     
     public void initialize(){
-        surveyid_col.setCellValueFactory(new PropertyValueFactory<>("surveyID"));
-        surveytitle_col.setCellValueFactory(new PropertyValueFactory<>("surveyTitle"));
-        surveydetails_col.setCellValueFactory(new PropertyValueFactory<>("surveyDetails"));
-        creatorname_col.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
+        //sets the reference value for each respective column
+        surveyid_col.setCellValueFactory(new PropertyValueFactory<>("surveyID")); //must match surveyID variable from the Survey class 
+        surveytitle_col.setCellValueFactory(new PropertyValueFactory<>("surveyTitle")); //must match surveyTitle variable from the Survey class
+        surveydetails_col.setCellValueFactory(new PropertyValueFactory<>("surveyDetails")); //must match surveyDetails variable from the Survey class
+        creatorname_col.setCellValueFactory(new PropertyValueFactory<>("creatorName")); //must match creatorName variable from the Survey class
 
         // Load data from file and populate the TableView
         try {
