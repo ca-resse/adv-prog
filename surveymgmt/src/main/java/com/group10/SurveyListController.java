@@ -59,37 +59,6 @@ public class SurveyListController {
     public void onClick_logout_btn (ActionEvent e) throws IOException{
         App.setRoot("primary");
     }
-
-    // @FXML
-    // public void onClick_refresh_btn (ActionEvent e) throws IOException{
-    //     Collection<SurveyData> list = Files.readAllLines(new File("surveylist.txt").toPath()).stream().map(line -> {
-    //         String[] details = line.split("\t");
-    //         SurveyData sd = new SurveyData();
-    //         sd.setSurveyID(details[0]);
-    //         sd.setSurveyTitle(details[1]);
-    //         sd.setSurveyDetails(details[2]);
-    //         sd.setCreatorName(details[3]);
-    //         return sd;
-    //     })
-    //     .collect(Collectors.toList());
-
-    //     ObservableList<SurveyData> details =FXCollections.observableArrayList(list);
-
-    //     // TableView<SurveyData> surveylist_table = new TableView<>();
-    //     // TableColumn<SurveyData, String> surveyid_col = new TableColumn<>();
-    //     // TableColumn<SurveyData, String> surveytitle_col = new TableColumn<>();
-    //     // TableColumn<SurveyData, String> surveydetails_col = new TableColumn<>();
-    //     // TableColumn<SurveyData, String> creatorname_col = new TableColumn<>();
-
-    //     // surveylist_table.getColumns().addAll(surveyid_col, surveytitle_col, surveydetails_col, creatorname_col);
-
-    //     surveyid_col.setCellValueFactory(data -> data.getValue().surveyIDProperty());
-    //     surveytitle_col.setCellValueFactory(data -> data.getValue().surveyTitleProperty());
-    //     surveydetails_col.setCellValueFactory(data -> data.getValue().surveyDetailsProperty());
-    //     creatorname_col.setCellValueFactory(data -> data.getValue().creatorNameProperty());
-
-    //     surveylist_table.setItems(details);
-    // }
     
     public void initialize(){
         surveyid_col.setCellValueFactory(new PropertyValueFactory<>("surveyID"));
@@ -127,7 +96,6 @@ public class SurveyListController {
                     String item = parts[i].trim();
                     System.out.println("item[" + i + "] = " + item);
                     }
-                    //System.out.println("item[0] = " + item0 + "\nitem[1] = " + item1 + "\nitem[2] = " + item2 + "\n");
                 }
             }
         }

@@ -1,5 +1,7 @@
 package com.group10;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -51,16 +53,46 @@ public class SurveyFormController implements Initializable {
         // To append new survey information to the list
 
         String filePath = "surveylist.txt";
-        Integer survey_id = 1;
+        // Generate a unique survey_id for each new entry
+        Integer survey_id = getLastSurveyID(filePath) + 1;
+        // pending method to obtain creator_name
         String creator_name = "placeholder";
         String surveytitle = newSurveyTitle.getText().toString();
         String surveydetails = newSurveyDetails.getText().toString();
 
         FileWriter fw = new FileWriter(filePath, true);
-        fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name);
+        if (survey_id > 1){
+            fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name);
+        } else {
+            System.out.println("Entry not added, error generating survey id.\n Check surveylist.txt");
+        }
         fw.close();
 
         App.setRoot("surveylist");
+    }
+
+    // method to return the survey_id from the last line in the text file
+    private int getLastSurveyID(String filePath) throws IOException{
+        int surveyid = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println("Line: " + line);
+                String[] parts = line.split("\\t");
+                System.out.println("Parts length= " + parts.length);
+                if (parts.length >= 4) {
+                    surveyid = Integer.parseInt(parts[0].trim());
+                } else {
+                    System.out.println("Error in text file format.");
+                    for (int i = 0; i < parts.length; i++) {
+                    String item = parts[i].trim();
+                    System.out.println("item[" + i + "] = " + item);
+                    }
+                }
+            }
+        }
+        return surveyid;
     }
 
     @FXML
