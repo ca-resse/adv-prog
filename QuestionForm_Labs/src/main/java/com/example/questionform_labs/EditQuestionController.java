@@ -4,24 +4,29 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.ResourceBundle;
 
 public class EditQuestionController implements Initializable {
     @FXML
-    private ChoiceBox<String> questionType;
+    private TextArea quesText;
     @FXML
-    private VBox optionsList;
+    private ChoiceBox<String> quesType;
+    @FXML
+    private ToggleButton isRequired;
+    @FXML
+    private VBox optList;
     private EditSurveyController survCtrl;
+    Queue<MultipleChoiceOptionController> optCtrlList = new LinkedList<>();
 
     public void setSurvCtrl(EditSurveyController survCtrl) {
         this.survCtrl = survCtrl;
@@ -35,45 +40,71 @@ public class EditQuestionController implements Initializable {
 
     }
 
-    public void changeQuestionType(ActionEvent event) throws IOException {
-        switch(questionType.getValue()) {
+    public String getQuesText() {
+        return quesText.getText();
+    }
+
+    public void setQuesText(String newQuesText) {
+        this.quesText.setText(newQuesText);
+    }
+
+    public String getQuesType() {
+        return quesType.getValue();
+    }
+
+    public void setQuesType(String newQuesType) {
+        this.quesType.setValue(newQuesType);
+    }
+
+    public String getIsRequired() {
+        return isRequired.getText();
+    }
+
+    public void setIsRequired(String newIsRequired) {
+        this.isRequired.setText(newIsRequired);
+    }
+
+    public void clearOptList() {
+        optList.getChildren().clear();
+        optCtrlList.clear();
+    }
+
+    public MultipleChoiceOptionController addOption() throws IOException {
+        FXMLLoader newOpt = new FXMLLoader(getClass().getResource("/FXML/MultipleChoiceOption.fxml"));
+        optList.getChildren().add(newOpt.load());
+
+        MultipleChoiceOptionController optCtrl = newOpt.getController();
+        optCtrl.setQuesCtrl(this);
+        optCtrlList.add(optCtrl);
+        return optCtrl;
+    }
+
+    public void changeQuesType() throws IOException {
+        switch(quesType.getValue()) {
             case "Multiple Choice" -> {
-                optionsList.getChildren().clear();
+                optList.getChildren().clear();
                 addOption();
             }
-            case "Polar" -> optionsList.getChildren().setAll(new CheckBox());
             case "Scale" -> {
                 Pane scale = FXMLLoader.load(getClass().getResource("/FXML/ScaleQuestion.fxml"));
-                optionsList.getChildren().setAll(scale);
+                optList.getChildren().setAll(scale);
             }
-            case "Open Ended" -> optionsList.getChildren().setAll(new TextField());
+            case "Polar" -> optList.getChildren().setAll(new CheckBox());
+            case "Open Ended" -> optList.getChildren().setAll(new TextField());
         }
     }
 
-    public void requiredBtn(ActionEvent event) {
-        ToggleButton btn = ((ToggleButton) event.getTarget());
-        if (btn.isSelected()) {
-            btn.setText("Required");
+    public void toggleRequired() {
+        if (isRequired.isSelected()) {
+            isRequired.setText("Required");
         } else {
-            btn.setText("Optional");
+            isRequired.setText("Optional");
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        questionType.getItems().addAll("Multiple Choice", "Polar", "Scale", "Open Ended");
-        questionType.setValue("Multiple Choice");
-//        try {
-//            addOption();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-    }
-
-    public void addOption() throws IOException {
-        FXMLLoader newOption = new FXMLLoader(getClass().getResource("/FXML/MultipleChoiceOption.fxml"));
-        optionsList.getChildren().add(newOption.load());
-        MultipleChoiceOptionController multiCtrl = newOption.getController();
-        multiCtrl.setQuesCtrl(this);
+        quesType.getItems().addAll("Multiple Choice", "Scale", "Polar", "Open Ended");
+        quesType.setValue("Multiple Choice"); // This also triggers changeQuesType once
     }
 }

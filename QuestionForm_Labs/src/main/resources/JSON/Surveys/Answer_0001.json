@@ -1,0 +1,27 @@
+{
+    "title": "Bill",
+    "description": "Reality is an illlusion",
+    "questionsList": [
+        {
+            "questionID": "0001",
+            "questionText": "Do you like me?",
+            "hasBeenAnswered": "",
+            "surveyAnswers": [
+                "Yes",
+                "Yes",
+                "Definitely",
+                "Maybe"
+            ]
+        },
+        {
+            "questionID": "0002",
+            "questionText": "Buy Gold",
+            "surveyAnswers": [
+                "Yes",
+                "Yes",
+                "No",
+                "No"
+            ]
+        }
+    ]
+}
