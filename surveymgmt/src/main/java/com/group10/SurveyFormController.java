@@ -5,7 +5,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,14 +65,39 @@ public class SurveyFormController implements Initializable {
         String surveytitle = newSurveyTitle.getText().toString();
         String surveydetails = newSurveyDetails.getText().toString();
 
-        FileWriter fw = new FileWriter(filePath, true);
+        FileWriter file = new FileWriter(filePath, true);
         if (survey_id > 1){
-            fw.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name + "\n");
+            file.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name + "\n");
         } else {
             System.out.println("Entry not added, error generating survey id.\n Check surveylist.txt");
         }
-        fw.close();
+        file.close();
 
+        // Create a JSON Object for new survey
+        JSONObject survey = new JSONObject();
+        survey.put("survey_id", survey_id.toString());
+        survey.put("survey_title", surveytitle);
+        survey.put("survey_details", surveydetails);
+        survey.put("creator_name", creator_name);
+
+        // Read existing JSON array from file
+        JSONParser parser = new JSONParser();
+        try (FileReader fr = new FileReader("surveylist.json")){
+            JSONArray existingSurveys = (JSONArray) parser.parse(fr);
+
+            // Append new survey object to existing JSON array
+            existingSurveys.add(survey);
+
+            // Write updated JSON array back to surveylist.json
+            try (FileWriter fw = new FileWriter("surveylist.json")){
+                fw.write(existingSurveys.toJSONString());
+                System.out.println("New survey added.");
+            } catch (IOException e2){
+                e2.printStackTrace();
+            }
+        } catch (IOException|org.json.simple.parser.ParseException e1) {
+            e1.printStackTrace();
+        }
         App.setRoot("surveylist");
     }
 
