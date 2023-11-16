@@ -23,11 +23,6 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="StudentID" layoutX="241.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[StudentID]">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
       <Text fill="#4e4e4e" layoutX="126.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="As it is your first time accessing the survey, please tell us more about yourself by answering a few General Questions below" wrappingWidth="665.6116943359375">
          <font>
             <Font size="18.0" />
