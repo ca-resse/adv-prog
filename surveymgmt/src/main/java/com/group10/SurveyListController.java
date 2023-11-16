@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -67,11 +72,33 @@ public class SurveyListController {
         surveydetails_col.setCellValueFactory(new PropertyValueFactory<>("surveyDetails")); //must match surveyDetails variable from the Survey class
         creatorname_col.setCellValueFactory(new PropertyValueFactory<>("creatorName")); //must match creatorName variable from the Survey class
 
-        // Load data from file and populate the TableView
-        try {
-            List<Survey> surveylist = readDataFromFile("surveylist.txt");
-            surveylist_table.getItems().addAll(surveylist);
-        } catch (IOException e) {
+        // // Load data from file and populate the TableView
+        // try {
+        //     List<Survey> surveylist = readDataFromFile("surveylist.txt");
+        //     surveylist_table.getItems().addAll(surveylist);
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
+
+        // Read the JSON Array to populate tableview
+        JSONParser parser = new JSONParser();
+        try(FileReader fr = new FileReader("surveylist.json")){
+            JSONArray array = (JSONArray) parser.parse(fr);
+            
+            // Loop through the array and add data to Tableview
+            for (Object obj : array){
+                JSONObject surveyObject = (JSONObject) obj;
+                String surveyid = (String) surveyObject.get("survey_id");
+                String surveytitle = (String) surveyObject.get("survey_title");
+                String creatorname = (String) surveyObject.get("creator_name");
+                String surveydetails = (String) surveyObject.get("survey_details");
+                //Create new survey object
+                Survey survey = new Survey(Integer.parseInt(surveyid), surveytitle, creatorname, surveydetails);
+            
+                // populate tableview with data from the survey object
+                surveylist_table.getItems().add(survey);
+            }
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }

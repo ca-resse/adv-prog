@@ -1,18 +1,2 @@
-10001	This title	Wow, what an awesome survey	creator1
-10002	surveynumber2	asdhsdikfkvfobkvssfv	creator 2  
-10003	Surveytitle3	detailsno3	creator 3
-10004	titlee	some deets	creator4	placeholder
-10005	This title	Wow, what an awesome survey	placeholder
-10006	What if there was no description	some deets	creator6
-10007	Another survey, again?		placeholder
-10008	testEmptyDetails		placeholder
-10009	another	fczsbfrgstsrtfvdvbfgfs	placeholder
-10010	survey title 3134959	lorem ipsum dolor sit amet	placeholder
-10011	AP Assignment	We're so screwed lol	placeholder
-10012	Last entry	final test before moving to json files	placeholder  10013	test for json	pls write this to json file	placeholder
-10013	let's try again	whooppp	placeholder
-10014	another one	yayyy	placeholder
-10015	new survey	some details lorem ipsum dolor sit amet	placeholder
-10016	Counseling Services	student opinion survey	placeholder
-10017	another survey	check this out by 18 Dec	placeholder
-10018	title	detailssssssss	placeholder
+10001	Campus Life Survey	student wellbeing and campus activities	placeholder
+10002	Academic Satisfaction Survey	Students' perception of academic standing	placeholder

@@ -1,14 +1,18 @@
 [
     {
-      "survey_id": "10017",
-      "survey_title": "another survey",
-      "survey_details": "check this out by 18 Dec",
-      "creator_name": "placeholder"
+      "survey_id": "10001",
+      "survey_title": "Campus Life Survey",
+      "isBlocked": false,
+      "survey_details": "student wellbeing and campus activities",
+      "creator_name": "placeholder",
+      "isStarted": true
     },
     {
-      "survey_id": "10018",
-      "survey_title": "title",
-      "survey_details": "detailssssssss",
-      "creator_name": "placeholder"
+      "survey_id": "10002",
+      "survey_title": "Academic Satisfaction Survey",
+      "isBlocked": false,
+      "survey_details": "Students' perception of academic standing",
+      "creator_name": "placeholder",
+      "isStarted": true
     }
   ]

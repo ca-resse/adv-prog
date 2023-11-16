@@ -64,6 +64,8 @@ public class SurveyFormController implements Initializable {
         String creator_name = "placeholder";
         String surveytitle = newSurveyTitle.getText().toString();
         String surveydetails = newSurveyDetails.getText().toString();
+        boolean is_started = true;
+        boolean is_blocked = false;
 
         FileWriter file = new FileWriter(filePath, true);
         if (survey_id > 1){
@@ -79,6 +81,8 @@ public class SurveyFormController implements Initializable {
         survey.put("survey_title", surveytitle);
         survey.put("survey_details", surveydetails);
         survey.put("creator_name", creator_name);
+        survey.put("isStarted", is_started);
+        survey.put("isBlocked", is_blocked);
 
         // Read existing JSON array from file
         JSONParser parser = new JSONParser();
