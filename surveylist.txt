@@ -1,2 +1,3 @@
 10001	Campus Life Survey	student wellbeing and campus activities	placeholder
 10002	Academic Satisfaction Survey	Students' perception of academic standing	placeholder
+10003	Clubs & Societies	Student rating of existing clubs & societies on-campus	placeholder

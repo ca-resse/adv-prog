@@ -1,18 +1,26 @@
 [
-    {
-      "survey_id": "10001",
-      "survey_title": "Campus Life Survey",
-      "isBlocked": false,
-      "survey_details": "student wellbeing and campus activities",
-      "creator_name": "placeholder",
-      "isStarted": true
-    },
-    {
-      "survey_id": "10002",
-      "survey_title": "Academic Satisfaction Survey",
-      "isBlocked": false,
-      "survey_details": "Students' perception of academic standing",
-      "creator_name": "placeholder",
-      "isStarted": true
-    }
-  ]
+  {
+    "survey_id": "10001",
+    "survey_title": "Campus Life Survey",
+    "isBlocked": false,
+    "survey_details": "student wellbeing and campus activities",
+    "creator_name": "placeholder",
+    "isStarted": true
+  },
+  {
+    "survey_id": "10002",
+    "survey_title": "Academic Satisfaction Survey",
+    "isBlocked": false,
+    "survey_details": "Students' perception of academic standing",
+    "creator_name": "placeholder",
+    "isStarted": true
+  },
+  {
+    "survey_id": "10003",
+    "survey_title": "Clubs & Societies",
+    "isBlocked": false,
+    "survey_details": "Student rating of existing clubs & societies on-campus",
+    "creator_name": "placeholder",
+    "isStarted": true
+  }
+]
