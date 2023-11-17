@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.ScaleQuestionController">
+   <children>
+      <TextField minWidth="130.0" promptText="Min" />
+      <HBox fx:id="optionScale" alignment="CENTER" prefHeight="26.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <RadioButton mnemonicParsing="false" />
+            <RadioButton mnemonicParsing="false" />
+         </children>
+      </HBox>
+      <TextField fx:id="divisions" minWidth="30.0" onAction="#scaleDivisions" promptText="Divs" text="10" />
+      <TextField minWidth="130.0" promptText="Max" />
+   </children>
+</HBox>
