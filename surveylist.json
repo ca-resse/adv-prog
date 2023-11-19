@@ -1,41 +1,9 @@
 [
   {
     "survey_id": "10001",
-    "survey_title": "Campus Life Survey",
+    "survey_title": "New Survey",
     "isBlocked": false,
-    "survey_details": "student wellbeing and campus activities",
-    "creator_name": "placeholder",
-    "isStarted": true
-  },
-  {
-    "survey_id": "10002",
-    "survey_title": "Academic Satisfaction Survey",
-    "isBlocked": false,
-    "survey_details": "Students' perception of academic standing",
-    "creator_name": "placeholder",
-    "isStarted": true
-  },
-  {
-    "survey_id": "10003",
-    "survey_title": "Clubs & Societies",
-    "isBlocked": false,
-    "survey_details": "Student rating of existing clubs & societies on-campus",
-    "creator_name": "placeholder",
-    "isStarted": true
-  },
-  {
-    "survey_id": "10004",
-    "survey_title": "Taylor's Academic Ranking 2023",
-    "isBlocked": false,
-    "survey_details": "Student satisfaction survey",
-    "creator_name": "placeholder",
-    "isStarted": true
-  },
-  {
-    "survey_id": "10005",
-    "survey_title": "JSON File Survey",
-    "isBlocked": false,
-    "survey_details": "To test if unique surveyID generation works.",
+    "survey_details": "General Student Wellbeing",
     "creator_name": "placeholder",
     "isStarted": true
   }

@@ -1,12 +1,10 @@
 package com.group10;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.net.URL;
-import java.text.ParseException;
 import java.util.ResourceBundle;
 
 import org.json.simple.JSONArray;
@@ -68,15 +66,6 @@ public class SurveyFormController implements Initializable {
         boolean is_started = true;
         boolean is_blocked = false;
 
-        // This code below writes to a txt file.
-        // FileWriter file = new FileWriter(filePath, true);
-        // if (survey_id > 1){
-        //     file.write(survey_id.toString() + "\t" + surveytitle + "\t" + surveydetails + "\t" + creator_name + "\n");
-        // } else {
-        //     System.out.println("Entry not added, error generating survey id.\n Check surveylist.txt");
-        // }
-        // file.close();
-
         // Create a JSON Object for new survey
         JSONObject survey = new JSONObject();
         survey.put("survey_id", survey_id.toString());
@@ -106,30 +95,6 @@ public class SurveyFormController implements Initializable {
         }
         App.setRoot("surveylist");
     }
-
-    // // method to return the survey_id from the last line in the text file
-    // private int getLastSurveyID(String filePath) throws IOException{
-    //     int surveyid = 0;
-
-    //     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-    //         String line;
-    //         while ((line = reader.readLine()) != null) {
-    //             System.out.println("Line: " + line);
-    //             String[] parts = line.split("\\t");
-    //             System.out.println("Parts length= " + parts.length);
-    //             if (parts.length >= 4) {
-    //                 surveyid = Integer.parseInt(parts[0].trim());
-    //             } else {
-    //                 System.out.println("Error in text file format.");
-    //                 for (int i = 0; i < parts.length; i++) {
-    //                 String item = parts[i].trim();
-    //                 System.out.println("item[" + i + "] = " + item);
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return surveyid;
-    // }
 
     // Get last SurveyID from json file
     private int getLastSurveyIDjson (String filePath) throws IOException{
