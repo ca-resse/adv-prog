@@ -22,5 +22,21 @@
     "survey_details": "Student rating of existing clubs & societies on-campus",
     "creator_name": "placeholder",
     "isStarted": true
+  },
+  {
+    "survey_id": "10004",
+    "survey_title": "Taylor's Academic Ranking 2023",
+    "isBlocked": false,
+    "survey_details": "Student satisfaction survey",
+    "creator_name": "placeholder",
+    "isStarted": true
+  },
+  {
+    "survey_id": "10005",
+    "survey_title": "JSON File Survey",
+    "isBlocked": false,
+    "survey_details": "To test if unique surveyID generation works.",
+    "creator_name": "placeholder",
+    "isStarted": true
   }
 ]

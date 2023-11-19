@@ -72,14 +72,6 @@ public class SurveyListController {
         surveydetails_col.setCellValueFactory(new PropertyValueFactory<>("surveyDetails")); //must match surveyDetails variable from the Survey class
         creatorname_col.setCellValueFactory(new PropertyValueFactory<>("creatorName")); //must match creatorName variable from the Survey class
 
-        // // Load data from file and populate the TableView
-        // try {
-        //     List<Survey> surveylist = readDataFromFile("surveylist.txt");
-        //     surveylist_table.getItems().addAll(surveylist);
-        // } catch (IOException e) {
-        //     e.printStackTrace();
-        // }
-
         // Read the JSON Array to populate tableview
         JSONParser parser = new JSONParser();
         try(FileReader fr = new FileReader("surveylist.json")){
