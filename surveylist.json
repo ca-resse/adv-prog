@@ -2,8 +2,24 @@
   {
     "survey_id": "10001",
     "survey_title": "New Survey",
-    "isBlocked": false,
+    "isBlocked": true,
     "survey_details": "General Student Wellbeing",
+    "creator_name": "placeholder",
+    "isStarted": true
+  },
+  {
+    "survey_id": "10002",
+    "survey_title": "Teaching Score Survey",
+    "isBlocked": false,
+    "survey_details": "Lecturer Teaching Evaluation",
+    "creator_name": "placeholder",
+    "isStarted": false
+  },
+  {
+    "survey_id": "10003",
+    "survey_title": "Transportation",
+    "isBlocked": false,
+    "survey_details": "Student opinion on transportation options around campus",
     "creator_name": "placeholder",
     "isStarted": true
   }
