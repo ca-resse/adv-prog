@@ -23,6 +23,12 @@ public class SurveyListController {
     private Button createSurvey_btn;
 
     @FXML
+    private TableColumn<Survey, String> blocked_col;
+
+    @FXML
+    private TableColumn<Survey, String> started_col;
+
+    @FXML
     private TableColumn<Survey, String> creatorname_col;
 
     @FXML
@@ -64,6 +70,8 @@ public class SurveyListController {
     
     public void initialize(){
         //sets the reference value for each respective column
+        blocked_col.setCellValueFactory(new PropertyValueFactory<>("isBlocked")); //must match isStarted variable from the Survey class
+        started_col.setCellValueFactory(new PropertyValueFactory<>("isStarted")); //must match isStarted variable from the Survey class
         surveyid_col.setCellValueFactory(new PropertyValueFactory<>("surveyID")); //must match surveyID variable from the Survey class 
         surveytitle_col.setCellValueFactory(new PropertyValueFactory<>("surveyTitle")); //must match surveyTitle variable from the Survey class
         surveydetails_col.setCellValueFactory(new PropertyValueFactory<>("surveyDetails")); //must match surveyDetails variable from the Survey class
@@ -81,9 +89,15 @@ public class SurveyListController {
                 String surveytitle = (String) surveyObject.get("survey_title");
                 String creatorname = (String) surveyObject.get("creator_name");
                 String surveydetails = (String) surveyObject.get("survey_details");
+                boolean isBlocked = (boolean) surveyObject.get("isBlocked");
+                boolean isStarted = (boolean) surveyObject.get("isStarted");
                 //Create new survey object
                 Survey survey = new Survey(Integer.parseInt(surveyid), surveytitle, creatorname, surveydetails);
             
+                // set isBlocked and isStarted status from the json object.
+                survey.setIsBlocked(isBlocked);
+                survey.setIsStarted(isStarted);
+
                 // populate tableview with data from the survey object
                 surveylist_table.getItems().add(survey);
                 
