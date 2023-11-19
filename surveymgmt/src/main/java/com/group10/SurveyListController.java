@@ -105,6 +105,19 @@ public class SurveyListController {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
+
+        surveylist_table.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                // Get selected survey object
+                Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
+                try {
+                    App.setRoot("secondary");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Page not found.");
+                }
+            }
+        });
     }
     
 }
