@@ -1,6 +1,7 @@
 package com.group10;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.simple.JSONArray;
@@ -21,6 +22,9 @@ public class SurveyListController {
 
     @FXML
     private Button createSurvey_btn;
+
+    @FXML
+    private Button startClose_btn;
 
     @FXML
     private TableColumn<Survey, String> blocked_col;
@@ -67,6 +71,53 @@ public class SurveyListController {
     public void onClick_logout_btn (ActionEvent e) throws IOException{
         App.setRoot("primary");
     }
+
+    @FXML
+    public void onClick_startClose_btn (ActionEvent e) throws IOException{
+        System.out.println("Start/Close button clicked.");
+        Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
+        if (selectedSurvey != null){
+            if (selectedSurvey.getIsStarted() == true){
+                selectedSurvey.setIsStarted(false);
+                System.out.println(selectedSurvey.getSurveyTitle() + " - started status set to false: " + selectedSurvey.getIsStarted());
+                updateSurveyListJSON(selectedSurvey);
+            } else {
+                selectedSurvey.setIsStarted(true);
+                System.out.println(selectedSurvey.getSurveyTitle() + " - started status set to true: " + selectedSurvey.getIsStarted());
+                updateSurveyListJSON(selectedSurvey);
+            }
+        }
+        // Refresh the tableview for updated contents
+        surveylist_table.refresh();
+    }
+
+    private void updateSurveyListJSON(Survey selectedSurvey){
+        //Load JSON Array
+        String filePath = "surveylist.json";
+        JSONParser parser = new JSONParser();
+        try (FileReader fr = new FileReader(filePath)){
+            JSONArray array = (JSONArray) parser.parse(fr);
+
+            //Update the JSON data with modified survey
+            for (Object obj : array) {
+                JSONObject survObject = (JSONObject) obj;
+                String surveyID = (String) survObject.get("survey_id");
+                if (Integer.parseInt(surveyID) == selectedSurvey.getSurveyID()) {
+                    System.out.println("isStarted:" + selectedSurvey.getIsStarted());
+                    survObject.put("isStarted", selectedSurvey.getIsStarted());
+                    
+                    break;
+                }
+            }
+            //Rewrite JSON file with updated data
+            try (FileWriter fw = new FileWriter(filePath)) {
+                fw.write(array.toJSONString());
+                System.out.println("surveylist.json updated successfully.");
+            }
+        } catch (IOException|ParseException e){
+            e.printStackTrace();
+        }
+    }
     
     public void initialize(){
         //sets the reference value for each respective column
@@ -110,12 +161,13 @@ public class SurveyListController {
             if (newSelection != null) {
                 // Get selected survey object
                 Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
-                try {
-                    App.setRoot("secondary");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println("Page not found.");
-                }
+                System.out.println("You have selected: " + selectedSurvey.getSurveyTitle());
+                // try {
+                //     App.setRoot("secondary");
+                // } catch (IOException e) {
+                //     e.printStackTrace();
+                //     System.out.println("Page not found.");
+                // }
             }
         });
     }

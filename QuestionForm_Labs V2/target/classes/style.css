@@ -36,7 +36,7 @@ GridPane > .label {
 VBox,
 .scroll-pane,
 .scroll-pane > .viewport {
-    /*-fx-background-color: -fx-primary;*/
+    -fx-background-color: -fx-primary;
 }
 
 .button,

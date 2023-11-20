@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="surveylist_page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SurveyListController">
    <children>
-      <Label layoutX="243.0" layoutY="41.0" text="Survey List" AnchorPane.topAnchor="50.0">
+      <Label layoutX="226.0" layoutY="49.0" text="SC Survey List" AnchorPane.topAnchor="49.0">
          <font>
             <Font name="Arial Bold" size="21.0" />
          </font>
@@ -22,11 +22,14 @@
       <Button fx:id="refresh_btn" layoutX="269.0" layoutY="359.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
       <TableView fx:id="surveylist_table" layoutX="54.0" layoutY="142.0" prefHeight="200.0" prefWidth="496.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="150.0">
         <columns>
-          <TableColumn fx:id="surveyid_col" prefWidth="75.0" text="Survey ID" />
-          <TableColumn fx:id="surveytitle_col" prefWidth="158.4000244140625" text="Survey Title" />
-            <TableColumn fx:id="surveydetails_col" prefWidth="173.60000610351562" text="Survey Details" />
-            <TableColumn fx:id="creatorname_col" maxWidth="181.60003662109375" minWidth="63.20001220703125" prefWidth="92.79995727539062" text="Creator Name" />
+            <TableColumn fx:id="blocked_col" prefWidth="55.20001220703125" text="Blocked" />
+            <TableColumn fx:id="started_col" prefWidth="70.4000244140625" text="Started" />
+          <TableColumn fx:id="surveyid_col" prefWidth="88.79998779296875" text="Survey ID" />
+          <TableColumn fx:id="surveytitle_col" prefWidth="123.20001220703125" text="Survey Title" />
+            <TableColumn fx:id="surveydetails_col" prefWidth="142.39996337890625" text="Survey Details" />
+            <TableColumn fx:id="creatorname_col" maxWidth="181.60003662109375" minWidth="63.20001220703125" prefWidth="83.20001220703125" text="Creator Name" />
         </columns>
       </TableView>
+      <Button fx:id="startClose_btn" layoutX="50.0" layoutY="85.0" mnemonicParsing="false" onAction="#onClick_startClose_btn" text="Start/Close Survey" />
    </children>
 </AnchorPane>

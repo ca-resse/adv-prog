@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="surveylist_page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SurveyListController">
    <children>
-      <Label layoutX="243.0" layoutY="41.0" text="Survey List" AnchorPane.topAnchor="50.0">
+      <Label layoutX="226.0" layoutY="49.0" text="SC Survey List" AnchorPane.topAnchor="49.0">
          <font>
             <Font name="Arial Bold" size="21.0" />
          </font>
@@ -30,5 +30,6 @@
             <TableColumn fx:id="creatorname_col" maxWidth="181.60003662109375" minWidth="63.20001220703125" prefWidth="83.20001220703125" text="Creator Name" />
         </columns>
       </TableView>
+      <Button fx:id="startClose_btn" layoutX="50.0" layoutY="85.0" mnemonicParsing="false" onAction="#onClick_startClose_btn" text="Start/Close Survey" />
    </children>
 </AnchorPane>

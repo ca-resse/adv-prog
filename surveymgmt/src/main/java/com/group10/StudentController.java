@@ -10,12 +10,16 @@ import org.json.simple.parser.ParseException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class StudentController {
 
@@ -87,5 +91,37 @@ public class StudentController {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
+
+        surveylist_table.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                // Get selected survey object
+                Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
+                // for debugging
+                System.out.println(selectedSurvey.getSurveyTitle());
+
+                //Load the survey page scene and pass the survey object data
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("answerSurvey.fxml"));
+
+                try {
+                    Parent root = loader.load();
+
+                    //Get the associated controller class
+                    AnswerSurveyController controller = loader.getController();
+
+                    //Pass data to controller
+                    controller.setSelectedSurvey(selectedSurvey);
+
+                    //Set the new scene
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e){
+                    e.printStackTrace();
+                    System.out.println("Failed to load.");
+                }
+            }
+        });
     }
 }

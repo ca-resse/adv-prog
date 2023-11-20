@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="surveylist_page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.StudentController">
    <children>
-      <Label layoutX="243.0" layoutY="41.0" text="Survey List" AnchorPane.topAnchor="50.0">
+      <Label layoutX="201.0" layoutY="50.0" text="Student Survey List" AnchorPane.topAnchor="50.0">
          <font>
             <Font name="Arial Bold" size="21.0" />
          </font>
