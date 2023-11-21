@@ -1,5 +1,6 @@
 package com.group10;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -56,6 +57,7 @@ public class SurveyFormController implements Initializable {
     public void onClick_create_btn (ActionEvent e) throws IOException{
         // To append new survey information to the list
 
+        // The json file containing list of surveys and their respective data
         String filePath = "surveylist.json";
         // Generate a unique survey_id for each new entry based on previous surveyid
         Integer survey_id = getLastSurveyIDjson(filePath) + 1;
@@ -77,18 +79,31 @@ public class SurveyFormController implements Initializable {
 
         // Read existing JSON array from file
         JSONParser parser = new JSONParser();
-        try (FileReader fr = new FileReader("surveylist.json")){
+        
+        File file = new File(filePath);
+
+        if (!file.exists() || file.length() == 0){
+            try (FileWriter emptyFile = new FileWriter("surveylist.json")) {
+            // Write an empty JSON array "[]" into the file
+            emptyFile.write("[]");
+            System.out.println("surveylist.json created with an empty array");
+            } catch (IOException e2){
+                e2.printStackTrace();
+            }
+        }
+
+        try (FileReader fr = new FileReader(filePath)){
             JSONArray existingSurveys = (JSONArray) parser.parse(fr);
 
             // Append new survey object to existing JSON array
             existingSurveys.add(survey);
 
             // Write updated JSON array back to surveylist.json
-            try (FileWriter fw = new FileWriter("surveylist.json")){
+            try (FileWriter fw = new FileWriter(filePath)){
                 fw.write(existingSurveys.toJSONString());
                 System.out.println("New survey added.");
-            } catch (IOException e2){
-                e2.printStackTrace();
+            } catch (IOException e3){
+                e3.printStackTrace();
             }
         } catch (IOException|org.json.simple.parser.ParseException e1) {
             e1.printStackTrace();

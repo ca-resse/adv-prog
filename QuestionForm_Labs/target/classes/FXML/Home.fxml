@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.HomeController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/AlabamaFlag.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="473.0" layoutX="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Wincest.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="142.0" layoutY="95.0" text="Sweet&#10;Home&#10;ALABAMA" textAlignment="CENTER" textFill="#01dcca">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
