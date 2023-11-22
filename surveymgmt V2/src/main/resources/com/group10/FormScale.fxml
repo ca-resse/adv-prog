@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.FormScaleController">
+   <children>
+      <Label fx:id="optMin" alignment="CENTER" minWidth="130.0" text="Label" />
+      <HBox fx:id="optScale" alignment="CENTER" prefHeight="26.0" prefWidth="500.0" />
+      <Label fx:id="optMax" alignment="CENTER" minWidth="130.0" text="Label" />
+   </children>
+</HBox>
