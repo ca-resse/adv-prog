@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="rootPane" prefWidth="700.0" spacing="5.0" styleClass="content-box" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.EditQuestionController">
+<VBox fx:id="rootPane" prefWidth="700.0" spacing="5.0" styleClass="content-box" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.EditQuestionController">
    <children>
       <GridPane>
          <columnConstraints>

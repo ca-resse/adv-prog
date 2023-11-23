@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.EditScaleController">
+<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.EditScaleController">
    <children>
       <TextField fx:id="optMin" minWidth="130.0" promptText="Min" />
       <HBox fx:id="optScale" alignment="CENTER" prefHeight="26.0" prefWidth="500.0">

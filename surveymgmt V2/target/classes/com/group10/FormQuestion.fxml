@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="optList" prefWidth="600.0" spacing="5.0" styleClass="content-box" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.FormQuestionController">
+<VBox fx:id="optList" prefWidth="600.0" spacing="5.0" styleClass="content-box" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.FormQuestionController">
    <children>
       <Label fx:id="quesText" text="Label" wrapText="true" />
    </children>

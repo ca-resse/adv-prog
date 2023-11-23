@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.questionform_labs.MultipleChoiceOptionController">
+<HBox prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.MultipleChoiceOptionController">
    <children>
       <TextField fx:id="optText" prefHeight="30.0" prefWidth="600.0" promptText="Option" />
       <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" rotate="90.0" text="&lt;">
