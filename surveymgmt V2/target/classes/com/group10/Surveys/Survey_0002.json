@@ -1,0 +1,17 @@
+{
+    "title": "Cipher",
+    "description": "The Universe is a hologram",
+    "questionsList": [
+        {
+            "questionText": "Do you like me?",
+            "questionType": "multiple choice",
+            "isRequired": "required",
+            "answerOptions": [
+                "Yes",
+                "Definitely",
+                "Absolutely",
+                "Other"
+            ]
+        }
+    ]
+}

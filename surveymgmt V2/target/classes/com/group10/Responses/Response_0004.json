@@ -1,0 +1,29 @@
+[
+    {
+        "answersList": [
+            {
+                "questionID": 1,
+                "answer": "Hell naw",
+                "answerNo": 0
+            },
+            {
+                "questionID": 2,
+                "answer": "Maybe"
+            }
+        ],
+        "respondentID": "0001"
+    },
+    {
+        "answersList": [
+            {
+                "questionID": 1,
+                "answer": "Hell yea"
+            },
+            {
+                "questionID": 2,
+                "answer": "Maybe"
+            }
+        ],
+        "respondentID": "0002"
+    }
+]

@@ -104,68 +104,12 @@ public class SurveyListController {
         Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
         //int surveyid = selectedSurvey.getSurveyID();
         int surveyid = 10001;
+        new EditSurveyController(surveyid);        
     }
 
     @FXML
     public void onClick_deleteSurvey_btn (ActionEvent e) throws IOException{
         System.out.println("Delete Survey button clicked.");
-        Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
-        removeSurveyJSON(selectedSurvey.getSurveyID());
-        System.out.println("Delete operation completed.");
-
-        surveylist_table.getItems().clear();
-
-        // Repopulate the table with updated data from json file.
-        JSONParser parser = new JSONParser();
-        try(FileReader fr = new FileReader("surveylist.json")){
-            JSONArray array = (JSONArray) parser.parse(fr);
-            
-            // Loop through the array and add data to Tableview
-            for (Object obj : array){
-                JSONObject surveyObject = (JSONObject) obj;
-                String surveyid = (String) surveyObject.get("survey_id");
-                String surveytitle = (String) surveyObject.get("survey_title");
-                String creatorname = (String) surveyObject.get("creator_name");
-                String surveydetails = (String) surveyObject.get("survey_details");
-                boolean isBlocked = (boolean) surveyObject.get("isBlocked");
-                boolean isStarted = (boolean) surveyObject.get("isStarted");
-                //Create new survey object
-                Survey survey = new Survey(Integer.parseInt(surveyid), surveytitle, creatorname, surveydetails);
-            
-                // set isBlocked and isStarted status from the json object.
-                survey.setIsBlocked(isBlocked);
-                survey.setIsStarted(isStarted);
-
-                // populate tableview with data from the survey object
-                surveylist_table.getItems().add(survey);
-                
-            }
-        } catch (IOException | ParseException e3) {
-            e3.printStackTrace();
-        }
-    }
-
-    private void removeSurveyJSON(int surveyID){
-        String filePath = "surveylist.json";
-        JSONParser parser = new JSONParser();
-        try (FileReader fr = new FileReader(filePath)) {
-            JSONArray array = (JSONArray) parser.parse(fr);
-
-            //Remove the survey object from JSON array according to surveyID
-            array.removeIf(obj -> {
-                JSONObject survObject = (JSONObject) obj;
-                String id = (String) survObject.get("survey_id");
-                return Integer.parseInt(id) == surveyID;
-            });
-
-            // Update the data in JSON file
-            try (FileWriter fw = new FileWriter(filePath)){
-                fw.write(array.toJSONString());
-                System.out.println("Survey " + surveyID + "removed from surveylist.json.");
-            }
-        } catch (IOException|ParseException e){
-            e.printStackTrace();
-        }
     }
 
     private void updateSurveyListJSON(Survey selectedSurvey){
