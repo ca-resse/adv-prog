@@ -24,6 +24,10 @@ public class App extends Application {
     //     }
     // }
 
+    // public static void main(String[] args) {
+    //     launch();
+    // }
+
     // ABOVE IS DEFUNCT CODE, USED TO BE WORKING BUT NOW DOES NOT
 
     private static Scene scene;
