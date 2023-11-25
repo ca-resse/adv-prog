@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,11 +14,9 @@
             <Font name="Arial Bold" size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="search_field" layoutX="47.0" layoutY="107.0" prefHeight="26.0" prefWidth="437.0" promptText="Search survey titles" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="120.0" />
-      <Button fx:id="search_btn" layoutX="470.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Search" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="120.0" />
       <Button fx:id="logout_btn" layoutX="545.0" layoutY="1.0" mnemonicParsing="false" onAction="#onClick_logout_btn" text="Logout" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="refresh_btn" layoutX="269.0" layoutY="359.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
-      <TableView fx:id="surveylist_table" layoutX="54.0" layoutY="142.0" prefHeight="200.0" prefWidth="496.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="150.0">
+      <Button fx:id="refresh_btn" layoutX="269.0" layoutY="359.0" mnemonicParsing="false" onAction="#onClick_refresh_btn" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
+      <TableView fx:id="surveylist_table" layoutX="54.0" layoutY="94.0" prefHeight="256.0" prefWidth="500.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="90.0">
         <columns>
           <TableColumn fx:id="surveyid_col" prefWidth="75.0" text="Survey ID" />
           <TableColumn fx:id="surveytitle_col" prefWidth="158.4000244140625" text="Survey Title" />

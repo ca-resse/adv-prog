@@ -33,12 +33,6 @@ public class StudentController {
     private Button refresh_btn;
 
     @FXML
-    private Button search_btn;
-
-    @FXML
-    private TextField search_field;
-
-    @FXML
     private TableColumn<Survey, String> surveydetails_col;
 
     @FXML
@@ -56,6 +50,13 @@ public class StudentController {
     @FXML
     void onClick_logout_btn(ActionEvent event) throws IOException {
         App.setRoot("primary");
+    }
+
+    @FXML
+    public void onClick_refresh_btn (ActionEvent e) throws IOException {
+        
+        //refresh the tableview for updated contents
+        surveylist_table.refresh();
     }
 
     public void initialize(){

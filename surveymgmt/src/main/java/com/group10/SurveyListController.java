@@ -45,13 +45,7 @@ public class SurveyListController {
     private Button logout_btn;
 
     @FXML
-    private Button search_btn;
-
-    @FXML
     private Button refresh_btn;
-
-    @FXML
-    private TextField search_field;
 
     @FXML
     private TableColumn<Survey, Integer> surveyid_col;
@@ -76,6 +70,13 @@ public class SurveyListController {
     @FXML
     public void onClick_logout_btn (ActionEvent e) throws IOException{
         App.setRoot("primary");
+    }
+
+    @FXML
+    public void onClick_refresh_btn (ActionEvent e) throws IOException {
+        
+        //refresh the tableview for updated contents
+        surveylist_table.refresh();
     }
 
     @FXML
@@ -239,12 +240,7 @@ public class SurveyListController {
                 // Get selected survey object
                 Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
                 System.out.println("You have selected: " + selectedSurvey.getSurveyTitle());
-                // try {
-                //     App.setRoot("secondary");
-                // } catch (IOException e) {
-                //     e.printStackTrace();
-                //     System.out.println("Page not found.");
-                // }
+
             }
         });
     }

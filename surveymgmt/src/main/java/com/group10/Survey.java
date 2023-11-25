@@ -76,18 +76,5 @@ public class Survey {
     public void setIsBlocked(boolean status){
         isBlocked = status;
     }
-
-    //Class Methods (might be implemented from controller class)
-    public void addNewSurvey(){
-
-    }
-
-    public void viewSurvey(){
-        //might need to be implemented on the Survey Creator's screen
-    }
-
-    public void updateSurvey(){
-        
-    }
     
 }
