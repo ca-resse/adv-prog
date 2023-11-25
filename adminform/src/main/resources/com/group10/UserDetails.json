@@ -1,0 +1,46 @@
+{
+    "userDetailsArray": [
+      {
+        "firstName": "John",
+        "lastName": "Doe",
+        "emailAddress": "",
+        "password": "password",
+        "gender": "Male",
+        "DOB": "01/01/1990",
+        "creatorID": "0001",
+        "adminID": "0001",
+        "isAdmin": "true",
+        "phoneNo": "",
+        "username": "johndoe1",
+        "faculty": ""
+      },
+      {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "emailAddress": "janedoe@gmail.com",
+        "password": "password",
+        "gender": "Female",
+        "DOB": "02/02/1991",
+        "creatorID": "0002",
+        "adminID": "NULL",
+        "isAdmin": "false",
+        "phoneNo": "+60 987654321",
+        "username": "janedoe",
+        "faculty": "Management"
+      },
+      {
+        "firstName": "Tom",
+        "lastName": "Smith",
+        "emailAddress": "tomsmith@gmail.com",
+        "password": "password",
+        "gender": "Male",
+        "DOB": "03/03/1992",
+        "creatorID": "0003",
+        "adminID": "NULL",
+        "isAdmin": "false",
+        "phoneNo": "000000000000",
+        "username": "tomsmith",
+        "faculty": "Finance"
+      }
+    ]
+  }

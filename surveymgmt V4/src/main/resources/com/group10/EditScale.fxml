@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.EditScaleController">
+   <children>
+      <TextField fx:id="optMin" minWidth="130.0" promptText="Min" />
+      <HBox fx:id="optScale" alignment="CENTER" prefHeight="26.0" prefWidth="500.0">
+         <children>
+            <Region prefWidth="200.0" />
+            <RadioButton contentDisplay="CENTER" mnemonicParsing="false" />
+            <Region prefWidth="200.0" />
+            <RadioButton contentDisplay="CENTER" mnemonicParsing="false" />
+            <Region prefWidth="200.0" />
+            <RadioButton contentDisplay="CENTER" mnemonicParsing="false" />
+            <Region prefWidth="200.0" />
+         </children>
+      </HBox>
+      <ChoiceBox fx:id="divisions" minWidth="45.0" onAction="#divideScale" />
+      <TextField fx:id="optMax" minWidth="130.0" promptText="Max" />
+   </children>
+</HBox>

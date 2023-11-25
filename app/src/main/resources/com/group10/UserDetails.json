@@ -4,7 +4,7 @@
             "firstName": "John",
             "lastName": "Doe",
             "username": "johndoe",
-            "creatorID": "0001",
+            "creatorID": "1",
             "DOB": "01/01/1990",
             "faculty": "Campus Central",
             "gender": "Male",
@@ -13,14 +13,14 @@
             "phoneNo": "+673 123456789",
 
             "isAdmin": "true",
-            "adminID": "0001"
+            "adminID": "1"
 
         },
         {
             "firstName": "Jane",
             "lastName": "Doe",
             "username": "janedoe",
-            "creatorID": "0002",
+            "creatorID": "2",
             "DOB": "02/02/1991",
             "faculty": "Management",
             "gender": "Female",
@@ -36,7 +36,7 @@
             "firstName": "Tom",
             "lastName": "Smith",
             "username": "tomsmith",
-            "creatorID": "0003",
+            "creatorID": "3",
             "DOB": "03/03/1992",
             "faculty": "Finance",
             "gender": "Male",
