@@ -66,6 +66,12 @@ public class SurveyListController {
     }
 
     @FXML
+    void switchToUserDetails(ActionEvent event) throws IOException {
+        //switches to userdetails.fxml
+       App.setRoot("userdetails");
+    }
+
+    @FXML
     public void onClick_logout_btn (ActionEvent e) throws IOException{
         App.setRoot("primary");
     }
@@ -121,7 +127,7 @@ public class SurveyListController {
     Survey selectedSurvey = surveylist_table.getSelectionModel().getSelectedItem();
         surveylist_table.getItems().removeAll(surveylist_table.getSelectionModel().getSelectedItem());
         //Load JSON Array
-        String filePath = "survey.json";
+        String filePath = "surveylist.json";
         JSONParser parser = new JSONParser();
         try (FileReader fr = new FileReader(filePath)){
             JSONArray array = (JSONArray) parser.parse(fr);
@@ -130,8 +136,17 @@ public class SurveyListController {
             for (Object obj : array) {
                 JSONObject survObject = (JSONObject) obj;
                 String surveyID = (String) survObject.get("survey_id");
+                
                 if (Integer.parseInt(surveyID) == selectedSurvey.getSurveyID()) {
+                    int surid = selectedSurvey.getSurveyID();
+                    //survObject.remove("survey_id", surid);
                     survObject.remove("survey_id");
+                    //survObject.remove(== selectedSurvey.getSurveyTitle());
+                    //survObject.remove(selectedSurvey.surveyDetails);
+                    //survObject.remove(selectedSurvey.creatorName);
+                    //survObject.remove(selectedSurvey.isStarted);
+                    //survObject.remove(selectedSurvey.isBlocked);
+
                     break;
                 }
             }
@@ -145,11 +160,10 @@ public class SurveyListController {
         }
     }
 
-    @FXML
-    void switchToUserDetails(ActionEvent event) throws IOException {
-      App.setRoot("userdetails");
-    }
+
     
+    
+
     public void initialize(){
         //sets the reference value for each respective column
         blocked_col.setCellValueFactory(new PropertyValueFactory<>("isBlocked")); //must match isStarted variable from the Survey class
